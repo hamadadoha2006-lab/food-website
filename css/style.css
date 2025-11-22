@@ -1,0 +1,127 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+.loading-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: #FF3D00;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+body{
+    background-color: #000;
+}
+.side-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.sidebar-black {
+    width: 260px;
+    background: #000;
+    padding: 30px 15px;
+    color: white;
+}
+.white-strip {
+    width: 70px;
+    background: white;
+    border-left: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.strip-logo {
+    width: 55px;
+}
+.icons i {
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 1s;
+}
+.icons i.fa-facebook:hover{
+    color: blue;
+}
+.icons i.fa-twitter:hover{
+    color: cornflowerblue;
+}
+.icons i.fa-globe:hover{
+    color: crimson;
+}
+.strip-icons i {
+    font-size: 18px;
+    cursor: pointer;
+}
+#toggleBtn{
+    font-size: 32px;
+    cursor: pointer;
+}
+.menu-list {
+    list-style: none;
+    padding: 0;
+}
+.menu-list li {
+    margin: 15px 0;
+    cursor: pointer;
+}
+.menu-list li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+.menu-list li a::before{
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 1s;
+}
+.menu-list li a:hover::before{
+    width: 100%;
+}
+.side-container.closed {
+    transform: translateX(-260px);
+}
+.meal-layer {
+    width: 100%;
+    height: 100%;
+    background-color: #f9f6f6ca;
+    top: 100%;
+    transition: .5s;
+}
+.meal:hover .meal-layer{
+    top: 0;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+.form-control::placeholder{
+    color: white;
+}
