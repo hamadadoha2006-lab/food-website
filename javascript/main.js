@@ -129,7 +129,7 @@ function displayCategory(categories) {
 getCategoryMeals("chicken");
 async function getCategoryMeals(categoryName) {
     showLoader()
-        const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${encodeURIComponent(categoryName)}`);
+        const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryName}`);
         const result = await response.json();
         displayMeals(result.meals);
         hideLoader() 
@@ -234,7 +234,7 @@ function displayArea(areas) {
     });
 }
 async function getAreaMeal(areaName) {
-    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${encodeURIComponent(areaName)}`);
+    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${areaName}`);
     const result = await response.json();
     displayAreaMeals(result.meals);
 }
@@ -289,7 +289,7 @@ function displayIngredient(ingredients) {
 }
 async function getIngredientMeal(ingredientName) {
     showLoader()
-    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${encodeURIComponent(ingredientName)}`);
+    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredientName}`);
     const result = await response.json();
     displayIngredientMeal(result.meals);
     hideLoader()
