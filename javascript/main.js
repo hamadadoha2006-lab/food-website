@@ -60,7 +60,7 @@ searchBtn.addEventListener("click", function searchInfo() {
 
 async function searchByName(name) {
     showLoader()
-    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${encodeURIComponent(name)}`);
+    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`);
     const result = await response.json();
     displaySearchResults(result.meals);
     hideLoader()
@@ -68,7 +68,7 @@ async function searchByName(name) {
 
 async function searchByFLetter(letter) {
     showLoader()
-    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${encodeURIComponent(letter)}`);
+    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`);
     const result = await response.json();
     displaySearchResults(result.meals);
     hideLoader()
